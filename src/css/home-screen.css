@@ -1,0 +1,497 @@
+Link {
+  text-decoration: none !important;
+}
+
+a {
+  text-decoration: none !important;
+}
+
+/**HOMESCREEN HEADER**/
+
+.home-slider {
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  background-position: bottom;
+  z-index: 2;
+  width: 100%;
+  height: 60vh;
+  padding-top: 0.5%;
+}
+
+.header-hero {
+  text-align: center;
+  font-size: 4em;
+  color: #fff;
+  margin-top: 8%;
+  font-family: 'Ubuntu'
+}
+
+.hero-text h3 {
+  text-align: center;
+  font-size: 1.5em;
+  color: #fff;
+  font-family: 'Ubuntu';
+  font-weight: lighter;
+}
+
+.hero-text p {
+  padding-top: 3%;
+  padding-right: 20%;
+  padding-left: 20%;
+  text-align: center;
+  font-size: 1em;
+  color: #fff;
+  font-family: 'Ubuntu';
+  font-weight: lighter;
+}
+
+/**Media Query for Header section**/
+@media (max-width: 45em) {
+  .row {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+  }
+
+  .header-hero {
+    margin-top: 15%;
+    text-align: center;
+    font-size: 3em;
+  }
+
+  .hero-text h3 {
+    text-align: center;
+    font-size: 1.2em;
+  }
+}
+
+
+
+/**HOMESCREEN ABOUT**/
+.about-section {
+  margin-top: 2%;
+  text-align: center;
+}
+
+.about-section img {
+  max-width: 80px;
+  max-height: 80px;
+}
+
+.about-section h3 {
+  margin-top: 7%;
+  color: #ff6600;
+  font-style: normal;
+  font-size: 1.2em;
+}
+
+.about-section p {
+  margin-top: 5%;
+  font-size: 1em;
+  line-height: 20px;
+  font-weight: lighter;
+  color: #EA5800;
+}
+
+.about-section h2 {
+  font-size: 1.65em;
+  color: #EA5822;
+}
+
+.about-section-card {
+  margin-top: 5%;
+  border: #EA5800 0.5px solid;
+  padding: 8%;
+  height: 220px;
+}
+
+/**Media Query for About section**/
+@media (max-width: 45em) {
+  .about-section h3 {
+    margin-top: 7%;
+    font-size: 1em;
+  }
+}
+
+/**HOMESCREEN CRAFTERS AND THEIR CRAFT**/
+.crafters-craft {
+  margin-top: 4%;
+  background: linear-gradient(rgba(122, 73, 16, 0.3), rgba(122, 73, 16, 0.4)), url(../images/crafters-craft.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-align: center;
+  height: 500px;
+  width: 100%;
+}
+
+.crafters-craft-content {
+  padding-top: 5%;
+}
+
+.crafters-craft-content h3 {
+  padding-top: 2%;
+  font-size: 3em;
+  font-weight: normal;
+  color: #ffffff;
+}
+
+.crafters-craft p {
+  color: #f2f2f2;
+  font-size: 2em;
+}
+
+/**Media Query for Crafters Craft Section**/
+@media (max-width: 45em) {
+  .crafters-craft-content h3 {
+    padding-top: 10%;
+    font-size: 2em;
+  }
+
+  .crafters-craft p {
+    margin-top: 10%;
+    font-size: 1.5em;
+  }
+}
+
+
+/**HOMESCREEN FEATURED**/
+
+.featured-item {
+  background-color: #f1f1f1;
+  padding: 5%;
+}
+
+.featured-item h3 {
+  color: #333;
+  font-size: 1.8em;
+  text-align: center;
+  margin-bottom: 5%;
+}
+
+.craft-star {
+  background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+  height: 300px;
+}
+
+.craft-star-info {
+  margin-top: 7%;
+  padding: 5%;
+  text-align: left;
+  font-weight: 400;
+  font-size: 1em;
+}
+
+.craft-star-img {}
+
+.craft-star-img img {
+  max-width: 300px;
+  max-height: 300px;
+
+}
+
+.btn-readmore {
+  background-color: rgba(253, 78, 20, 1);
+  padding: 3%;
+  color: #fff;
+  width: 60%;
+  text-align: center;
+  font-size: 1.5em;
+  border-radius: 7px;
+  margin-left: 5%;
+  cursor: pointer;
+}
+
+.btn-readmore:hover {
+  background-color: rgba(253, 78, 20, 0.8);
+}
+
+.freebie {
+  background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+  height: 300px;
+}
+
+.freebie iframe {
+  width: 100%;
+  height: 100%;
+}
+
+/* .freebie-overlay {
+  position: absolute;
+  background: rgba(242, 153, 74, 0.1);
+  width: 100%;
+  height: 100%;
+} */
+
+/**Media Query for CraftStar section**/
+@media (max-width: 45em) {
+
+  .craft-star-img img {
+    display: none;
+  }
+
+  .craft-star {
+    background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+    border-radius: 0px;
+    height: 250px;
+  }
+
+  .craft-star-info {
+    text-align: center;
+  }
+
+  .featured-item h3 {
+    margin-top: 7%;
+  }
+
+  .btn-readmore {
+    padding: 2%;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 0px;
+    cursor: pointer;
+  }
+
+  .freebie {
+    background: linear-gradient(rgba(242, 153, 74, 0.5), rgba(242, 153, 74, 0.5));
+    border-radius: 0px;
+    width: 100%;
+    height: 300px;
+  }
+
+  .freebie iframe {
+    width: 100%;
+    border-radius: 0px;
+    height: 100%;
+  }
+}
+
+
+/** UPCOMING EVENTS***/
+.upcoming-events {
+  background: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url(../images/tcc-2018-2.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  height: 400px;
+  background-position: bottom 30px;
+  width: 100%;
+
+}
+
+.upcoming-events .row {
+  margin-left: 0px !important;
+  margin-right: 0px !important;
+}
+
+.upcoming-details {
+  background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%);
+  margin-top: 5px;
+  margin-right: 0px;
+}
+
+.upcoming-details h3 {
+  text-align: center;
+  color: #fff;
+}
+
+.event-date {
+  text-align: center;
+  background-color: #FD4E14;
+  width: 17%;
+  color: #fff;
+  float: left;
+}
+
+.event-date h2 {
+  font-size: 3em;
+  font-weight: 400;
+}
+
+.event-date p {}
+
+.event-info {
+  margin-left: 2%;
+  margin-right: 2%;
+  margin-bottom: 2%;
+  color: #fff;
+  width: 70%;
+  display: inline-block;
+  border: #FD4E14 2px solid;
+  text-align: center;
+  padding: 0.7%;
+}
+
+.event-info p {
+  font-weight: lighter;
+}
+
+.event-info h3 {}
+
+
+/**Media Query for Upcoming Events**/
+@media (max-width: 45em) {
+  .upcoming-events {
+    background: linear-gradient(270deg, rgba(45, 156, 219, 0.3933) 71.59%, rgba(196, 196, 196, 0) 88.75%), url(../images/tcc-2018-2.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 500px;
+    background-position: bottom 30px;
+    ;
+    width: 100%;
+  }
+
+  .upcoming-details {
+    background: none;
+    width: 100%;
+    height: 500px;
+  }
+
+  .upcoming-details h3 {
+    text-align: center;
+    color: #fff;
+  }
+
+  .event-date {
+    text-align: center;
+    background-color: #FD4E14;
+    width: 25%;
+    color: #fff;
+    float: left;
+  }
+
+  .event-date h2 {
+    font-size: 3em;
+    font-weight: 400;
+  }
+
+  .event-info {
+    margin-left: 2%;
+    margin-right: 2%;
+    margin-bottom: 2%;
+    color: #fff;
+    width: 70%;
+    display: inline-block;
+    border: #FD4E14 2px solid;
+    text-align: center;
+    padding: 1%;
+  }
+}
+
+/**PROJECT SECTION**/
+.project-section {
+  margin-top: 5%;
+}
+
+.project-details {
+  width: 100%;
+  padding: 3%;
+  align-content: center;
+}
+
+.project-details h3 {
+  font-size: 1.35em;
+  text-align: center;
+}
+
+.project-list img {
+  max-width: 100%;
+  height: 100px;
+}
+
+.btn-moreprojects {
+  margin-top: 5%;
+  margin-left: 35%;
+  padding: 1%;
+  text-align: center;
+  width: 30%;
+  border: #333333 2px solid;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/**Media Query for Project section**/
+@media (max-width: 45em) {
+  .project-section {
+    display: none;
+  }
+}
+
+
+/***SERVICE SUPPORT**/
+.service-support {
+  margin-top: 5%;
+  background-color: #F5F5F5;
+}
+
+.service-support img {
+  height: 100px;
+  max-width: 100%;
+}
+
+.service-support h2 {
+  font-family: 'Ubuntu'sans-serif;
+  padding: 2%;
+  text-align: center;
+  color: #333;
+}
+
+/**Media Query for Support section**/
+
+@media (max-width: 45em) {
+  .service-support {
+    text-align: center;
+  }
+
+  .service-support img {
+    text-align: center;
+    padding: 2%;
+  }
+}
+
+/**FOOTER SECTION**/
+.footer-section {
+  background: rgba(0, 0, 0, 0.54);
+}
+
+.footer-section h3 {
+  margin-top: 3%;
+  color: #f5f5f5;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 1.5em;
+  text-align: left;
+}
+
+.footer-items {
+  list-style: none;
+  color: #f5f5f5 !important;
+  font-size: 1em;
+  font-weight: lighter;
+  margin-top: 10%;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+.footer-items li {
+  margin-top: 2%;
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
+}
+
+.footer-items li:hover {
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
+}
+
+.footer-items li a {
+  text-decoration: none;
+  text-decoration: none !important;
+  color: #f5f5f5 !important;
+}
+
+.copyright {
+  border-top: #f5f5f5 1px solid;
+  padding: 2%;
+  color: #f5f5f5;
+  font-size: 1.15em;
+}

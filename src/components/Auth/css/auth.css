@@ -1,0 +1,294 @@
+
+
+.login-pane {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  margin-left: 18%;
+  width: 60%;
+  border: 2px solid rgba(250, 150, 32, 0.6);
+  background-color: #f1f1;
+}
+.slug {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 300;
+  line-height: normal;
+  font-size: 0.8em;
+  color: #F5F5F5;
+}
+
+.left-pane {
+  background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2%;
+  height: 100%;
+}
+
+.left-pane h2 {
+  margin-top: 30%;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.25em;;
+  color: #fff;
+}
+
+.left-pane h3 {
+
+}
+
+.left-pane img {
+  max-width: 60%;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+.right-pane {
+  margin-top: 1%;
+  padding: 3%;
+}
+
+.right-pane h3 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  font-size: 1.5em;
+  color: #EA5800;
+}
+
+.right-pane h4 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 1.25em;
+  color: #333;
+}
+
+.right-pane p {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  line-height: normal;
+  font-size: 1em;
+  color: #333;
+  padding-top: 10px;
+}
+
+.login-pane input {
+  box-sizing: border-box;
+  display: block;
+  width:90%;
+  border-width: 1px;
+  border-style: solid;
+  padding: 3px;
+  outline: 0;
+  font-family: inherit;
+  font-size: 0.95em;
+  border-radius: 3px;
+}
+
+.input-invalid {
+  border-color: #f34b4bd1 !important;
+}
+
+.invalid-response{
+  font-size: 12px;
+  box-sizing: border-box;
+  color: #f34b4bd1;
+}
+
+.login-pane input[type="email"],
+.login-pane input[type="password"],
+.login-pane input[type="text"] {
+  background: #fff;
+  border-color: #bbb;
+  color: #555;
+}
+
+/* Text fields' focus effect */
+.login-pane input[type="email"]:focus,
+.login-pane input[type="password"]:focus
+.login-pane input[type="text"]:focus {
+  border-color: #888;
+}
+
+.login-pane input[type="submit"] {
+  text-align: center;
+  width: 60%;
+  border-radius: 0;
+  background-color: rgba(250, 150, 32, 0.9);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+}
+
+.login-pane input[type="submit"]:hover {
+  background-color: rgba(250, 150, 32, 0.7);
+}
+
+/* Buttons' focus effect */
+.login-pane input[type="submit"]:focus {
+  background-color: rgba(250, 150, 32, 0.7);
+}
+
+.extra-note Link {
+  font-size: 0.5em;
+}
+
+.left-pane-up {
+  background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2%;
+  height: 17vh;
+
+}
+
+.left-pane-up h2 {
+  margin-top: 4%;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2em;;
+  color: #fff;
+}
+
+.left-pane-up h3 {
+
+}
+
+.left-pane-up img {
+  max-width: 55%;
+  margin-top: 2%;
+  margin-left: 3%;
+}
+
+
+.left-pane-down {
+
+  padding: 2%;
+}
+
+.left-pane-down h3 {
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  font-size: 1.5em;
+  color: #EA5800;
+}
+
+.left-pane-down h4 {
+  margin-top: 1%;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 1.25em;;
+  color: rgba(250, 150, 32, 0.6);
+}
+
+.left-pane-down p {
+  color: #333;
+  font-family: Ubuntu;
+  font-style: light;
+  font-size: 0.85em;
+}
+
+.right-pane-up {
+  border-right: 1px solid rgba(250, 150, 32, 0.6);
+}
+
+.right-pane-down {
+  padding: 5%;
+}
+
+.category-btn {
+  margin-left: 3%;
+  margin-top: 2%;
+  padding: 2.5%;
+  text-align: center;
+  width: 80%;
+  border-radius: 0;
+  background-color: rgba(250, 150, 32, 0.9);
+  border-color: transparent;
+  color: #fff;
+  cursor: pointer;
+  font-family: ubuntu;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+}
+
+/**SIGNUP AS A CRAFTER**/
+.middle-pane {
+  background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 2%;
+  height: 20vh;
+  width: 100%;
+}
+
+.middle-pane h2 {
+  margin-top: 3%;
+  font-family: Ubuntu;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 2.25em;;
+  color: #fff;
+}
+
+.middle-pane h3 {
+
+}
+
+.middle-pane img {
+  max-width: 30%;
+  margin-top: 3%;
+  margin-left: 3%;
+}
+
+/**END SIGNUP AS A CRAFTER**/
+
+@media (max-width: 45em) {
+  .login-pane {
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+    margin-right: 0;
+    width: 100%;
+    border: 2px solid rgba(250, 150, 32, 0.6);
+    background-color: #f1f1;
+  }
+
+  .left-pane {
+    background: linear-gradient(rgba(250, 150, 32, 0.6), rgba(250, 150, 32, 0.6)), url('../img/login-left.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding: 2%;
+    height: 20vh;
+    width: 100%;
+  }
+  .left-pane h2 {
+    margin-top: 2%;
+    font-family: Ubuntu;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 2em;;
+    color: #fff;
+  }
+  .login-pane .row {
+    margin-right: 0px;
+    margin-left: 0px;
+  }
+
+  .right-pane-up {
+    border-right: 0;
+    border-bottom: 1px solid rgba(250, 150, 32, 0.6);
+  }
+}

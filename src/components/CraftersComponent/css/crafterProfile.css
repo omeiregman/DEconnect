@@ -1,0 +1,63 @@
+.loader{
+    margin: 20%;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+  }
+  
+  .loader p {
+    color: #EA5800;
+    font-size: 18px;
+  }
+  
+
+.crafter-profile-page {
+    margin-top: 0px;
+    background-color:  #E5E5E5;
+}
+
+.crafter-basic-info {
+    border-radius: 10px;
+    padding: 3% 3%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.crafter-activity-info {
+    border-radius: 10px;
+    padding: 3% 3%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.crafter-profile-page h2 {
+
+}
+
+.crafter-profile-page h3 {
+    font-family: 'ubuntu';
+    font-size: 1.5em;
+    color: #A97C6C;
+}   
+
+.crafter-gallery {
+    border-radius: 10px;
+    padding: 3% 3%;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    background-color: #FFF;
+    width: 100%;
+}
+
+.gallery-box img {
+    width: 100%;
+    height: 100px;
+}
+
+.profile-image {
+    width: 90%;
+}

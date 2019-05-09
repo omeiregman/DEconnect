@@ -1,0 +1,72 @@
+.main-nav {
+  border-radius: 0px;
+  background-color: rgba(26, 13, 13, 0.4) !important;
+  /* margin: 2% 3% 2% 3%; */
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0px;
+}
+
+.nav-items {
+  margin-left: 50%;
+  font-size: 1em;
+  font-family: 'Ubuntu', sans-serif;
+  color: #fff !important;
+  line-height: 1.714;
+  text-align: left;
+}
+
+.nav-item {
+  color: #fff !important;
+  line-height: 1.714;
+  margin-left: 15px;
+}
+
+
+.nav-brand {
+  font-size: 1.1em;
+  color: #FADDC3;
+  text-decoration: none !important;
+  line-height: 1.333;
+  padding: 15px;
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.nav-brand:hover {
+  font-size: 1.1em;
+  color: #FFFFFF !important;
+  line-height: 1.333;
+  text-decoration: none;
+}
+
+.nav-login {
+  font-size: 18px;
+  color: rgb(255, 255, 255);
+  padding-left: 5px;
+}
+
+.nav-avatar {
+  border-radius: 50px;
+}
+
+.auth-nav-items {
+  float: right;
+  margin-top: 4px;
+  margin-left: 15px;
+  border-radius: 5px;
+  padding: 3px;
+}
+
+.auth-nav-item {
+  color: #f2f2f2 !important;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+
+
+@media (max-width: 45em) {
+  .hero-nav-text {
+    display: none;
+  }
+}
