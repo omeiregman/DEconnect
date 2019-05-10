@@ -1,0 +1,10 @@
+.profile-header-image {
+  background-size: cover;
+  background-position: center;
+  height: 180px;
+  background: linear-gradient(
+      rgba(113, 74, 255, 0.35),
+      rgba(113, 74, 255, 0.35)
+    ),
+    url("../../../images/profile_header.png");
+}

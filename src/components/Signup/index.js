@@ -4,7 +4,7 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import LinkedIn from "../LinkedIn";
 import "./signup.css";
 
-const SignInComponent = ({ handleSuccess, handleFailure }) => (
+const SignInComponent = ({ onSuccess, onFailure, inputs, onChange }) => (
   <div className="signup-container">
     <div className="form-container">
       <p className="center">Join us to meet the rest of the world</p>
@@ -13,36 +13,32 @@ const SignInComponent = ({ handleSuccess, handleFailure }) => (
         <TextFieldGroup
           name="firstName"
           type="text"
-          // value={this.state.password}
-          // onChange={this.onChange}
-          // error={errors.password}
+          value={inputs.firstName}
+          onChange={onChange}
         />
         <br />
         <p>last name</p>
         <TextFieldGroup
           name="lastName"
           type="text"
-          // value={this.state.password}
-          // onChange={this.onChange}
-          // error={errors.password}
+          value={inputs.lastName}
+          onChange={onChange}
         />
         <br />
         <p>email</p>
         <TextFieldGroup
           name="email"
           type="text"
-          // value={this.state.password}
-          // onChange={this.onChange}
-          // error={errors.password}
+          value={inputs.email}
+          onChange={onChange}
         />
         <br />
         <p>password</p>
         <TextFieldGroup
           name="password"
           type="password"
-          // value={this.state.password}
-          // onChange={this.onChange}
-          // error={errors.password}
+          value={inputs.password}
+          onChange={onChange}
         />
       </form>
       <br />
@@ -53,8 +49,8 @@ const SignInComponent = ({ handleSuccess, handleFailure }) => (
         <br />
         <br />
         <LinkedIn
-          onSuccess={handleSuccess}
-          onFailure={handleFailure}
+          onSuccess={onSuccess}
+          onFailure={onFailure}
           redirectUri={`${window.location.origin}/linkedin`}
           scope="r_liteprofile r_emailaddress"
           clientId={process.env.REACT_APP_CLIENT_ID}

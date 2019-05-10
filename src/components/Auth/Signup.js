@@ -2,15 +2,12 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { registerUser } from "../../actions/authActions";
-import { BarLoader } from "react-spinners";
-import TextFieldGroup from "../common/TextFieldGroup";
-import LinkedIn from "../../components/LinkedIn";
 import { callApi } from "../../utils";
 
 import SignUpComponent from "../../components/Signup";
 import LoginSidePaneComponent from "../../components/LoginSidePane";
 
-import { Link, Redirect } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 import "./css/auth.css";
 
@@ -21,7 +18,9 @@ class SignUp extends Component {
     this.state = {
       inputs: {
         email: "",
-        password: ""
+        password: "",
+        firstName: "",
+        lastName: "",
       },
       errors: {},
       loading: false
