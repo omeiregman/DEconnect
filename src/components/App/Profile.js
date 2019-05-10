@@ -1,19 +1,22 @@
 import React, { Component } from "react";
 import Header from "../CraftersComponent/DEconnectHeader";
-import ProfileTab from '../ProfileTab'
+import ProfileTab from "../ProfileTab";
+import ProfessionalMatches from "../ProfessionalMatches";
 
 class Profile extends Component {
   render() {
     return (
       <div>
         <Header />
-        <div className="row" >
-        <div className="col-md-9" >
-          <ProfileTab />
-        </div>
-        <div className="col-md-3" >
-          <h4> Matches </h4>
-        </div>
+        <div className="container">
+          <div className="row">
+            <div className="col-md-8">
+              <ProfileTab />
+            </div>
+            <div className="col-md-4">
+              <ProfessionalMatches />
+            </div>
+          </div>
         </div>
       </div>
     );

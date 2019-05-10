@@ -1,0 +1,29 @@
+.small-profile-component {
+  margin-bottom: 10px;
+}
+
+.small-profile-component p {
+  margin: 0px;
+}
+
+.small-profile-component .profile-picture-container {
+  margin-right: 10px;
+}
+
+.small-profile-component .profile-picture-container img {
+  width: 70px;
+  height: 70px;
+}
+
+.small-profile-component
+  .profile-basic-profile-container
+  .profile-basic-profile {
+  font-size: 12px;
+}
+
+.small-profile-component
+  .profile-basic-profile-container
+  .profile-basic-profile
+  .profile-name {
+  font-size: 14px;
+}
