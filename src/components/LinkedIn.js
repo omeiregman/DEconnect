@@ -58,7 +58,7 @@ export class LinkedIn extends Component {
     return (
       <button
         type="button"
-        className="btn btn-info"
+        className="linkedin-button"
         onClick={this.handleConnectLinkedInClick}
       >
         Login with Linkedin

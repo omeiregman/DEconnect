@@ -11,7 +11,7 @@ const TextFieldGroup = ({
   info,
   type,
   onChange,
-  disabled
+  disabled,
 }) => {
   return(
     <div>
@@ -20,6 +20,7 @@ const TextFieldGroup = ({
         placeholder={placeholder}
         name={name}
         value={value}
+        autoComplete="new-password"
         onChange={onChange}
         disabled={disabled}/>
         {error && (<div className="invalid-response">{error}</div>)}

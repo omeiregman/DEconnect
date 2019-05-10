@@ -1,0 +1,25 @@
+.login-container {
+  margin: 0px !important;
+  min-height: 100vh;
+  background-image: url("../../images/sign.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white
+}
+
+.login-container .hero-text-container {
+  display: block;
+  width: 100%;
+  text-align: center;
+  padding: 40px;
+  background: rgba(113, 74, 255, 0.5);
+}
+
+.login-container .hero-text-container div {
+  border: 3px solid #ffffff;
+  padding: 30px 0px;
+}
