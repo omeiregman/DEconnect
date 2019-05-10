@@ -7,6 +7,9 @@ import TextFieldGroup from "../common/TextFieldGroup";
 import LinkedIn from "../../components/LinkedIn";
 import { callApi } from "../../utils";
 
+import SignInComponent from "../../components/Signin";
+import LoginSidePaneComponent from "../../components/LoginSidePane";
+
 import { Link, Redirect } from "react-router-dom";
 
 import "./css/auth.css";
@@ -16,8 +19,10 @@ class Signin extends Component {
     super(props);
 
     this.state = {
-      email: "",
-      password: "",
+      inputs: {
+        email: "",
+        password: ""
+      },
       errors: {},
       loading: false
     };
@@ -96,6 +101,7 @@ class Signin extends Component {
   };
 
   render() {
+    const { inputs } = this.state;
     const { from } = this.props.location.state || { from: { pathname: "/" } };
     //const { info } = this.props.location.state || { info: ""}
 
@@ -105,65 +111,86 @@ class Signin extends Component {
 
     const { errors } = this.state;
 
+    // return (
+    //   <section className="login-pane">
+    //     <div className="h-100">
+    //       <div className="row">
+    //         <div className="col-sm-6">
+    //           <div className="left-pane" />
+    //         </div>
+    //         <div className="col-sm-6 right-pane">
+    //           <form noValidate onSubmit={this.onSubmit}>
+    //             <h3>Welcome back,</h3>
+    //             <br />
+    //             <h4>Please Sign In to Continue</h4>
+    //             <p>email</p>
+    //             <TextFieldGroup
+    //               name="email"
+    //               type="email"
+    //               value={this.state.email}
+    //               onChange={this.onChange}
+    //               error={errors.email}
+    //             />
+
+    //             <p>password</p>
+    //             <TextFieldGroup
+    //               name="password"
+    //               type="password"
+    //               value={this.state.password}
+    //               onChange={this.onChange}
+    //               error={errors.password}
+    //             />
+
+    //             <p className="extra-note">
+    //               <Link to="/signin">forgot password?</Link>
+    //             </p>
+    //             <br />
+    //             <div>
+    //               <BarLoader
+    //                 color={"#FBB062"}
+    //                 loading={this.state.loading}
+    //                 width={218}
+    //               />
+    //             </div>
+    //             <input type="submit" value="Sign In" />
+    //             <br />
+    //             <LinkedIn
+    //               onSuccess={this.handleSuccess}
+    //               onFailure={this.handleFailure}
+    //               redirectUri={`${window.location.origin}/linkedin`}
+    //               scope="r_liteprofile r_emailaddress"
+    //               clientId={process.env.REACT_APP_CLIENT_ID}
+    //               // redirectUri={process.env.REACT_APP_REDIRECT_URI}
+    //             />
+    //             <p>
+    //               New to APP? <Link to="/signup">Sign Up</Link>
+    //             </p>
+    //           </form>
+    //         </div>
+    //       </div>
+    //     </div>
+    //   </section>
+    // );
+
     return (
-      <section className="login-pane">
-        <div className="h-100">
-          <div className="row">
-            <div className="col-sm-6">
-              <div className="left-pane" />
-            </div>
-            <div className="col-sm-6 right-pane">
-              <form noValidate onSubmit={this.onSubmit}>
-                <h3>Welcome back,</h3>
-                <br />
-                <h4>Please Sign In to Continue</h4>
-                <p>email</p>
-                <TextFieldGroup
-                  name="email"
-                  type="email"
-                  value={this.state.email}
-                  onChange={this.onChange}
-                  error={errors.email}
-                />
-
-                <p>password</p>
-                <TextFieldGroup
-                  name="password"
-                  type="password"
-                  value={this.state.password}
-                  onChange={this.onChange}
-                  error={errors.password}
-                />
-
-                <p className="extra-note">
-                  <Link to="/signin">forgot password?</Link>
-                </p>
-                <br />
-                <div>
-                  <BarLoader
-                    color={"#FBB062"}
-                    loading={this.state.loading}
-                    width={218}
-                  />
-                </div>
-                <input type="submit" value="Sign In" />
-                <br />
-                <LinkedIn
-                  onSuccess={this.handleSuccess}
-                  onFailure={this.handleFailure}
-                  redirectUri={`${window.location.origin}/linkedin`}
-                  scope="r_liteprofile r_emailaddress"
-                  clientId={process.env.REACT_APP_CLIENT_ID}
-                  // redirectUri={process.env.REACT_APP_REDIRECT_URI}
-                />
-                <p>
-                  New to APP? <Link to="/signup">Sign Up</Link>
-                </p>
-              </form>
-            </div>
+      <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
+        <div className="row">
+          <div className="col-md-7" style={{ padding: 0 }}>
+            <LoginSidePaneComponent />
+          </div>
+          <div className="col-md-5" style={{ padding: 0 }}>
+            <SignInComponent
+              onSuccess={this.handleSuccess}
+              onFailure={this.handleFailure}
+              redirectUri={`${window.location.origin}/linkedin`}
+              scope="r_liteprofile r_emailaddress"
+              clientId={process.env.REACT_APP_CLIENT_ID}
+              inputs={inputs}
+              onChange={this.onChange}
+            />
           </div>
         </div>
-      </section>
+      </div>
     );
   }
 }

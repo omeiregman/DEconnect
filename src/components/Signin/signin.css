@@ -1,0 +1,61 @@
+.signin-container {
+  display: flex;
+  min-height: 100vh;
+  margin: 0px !important;
+  justify-content: center;
+  align-items: center;
+  padding: 0px 20px;
+  background: rgba(113, 74, 255, 0.9);
+}
+
+.signin-container .form-container {
+  display: block;
+  width: 80%;
+  color: #ffffff;
+}
+
+.signin-container .form-container input {
+  background-color: transparent;
+  border: 1px solid #ffffff;
+  width: 100%;
+  color: #ffffff
+}
+
+.signin-container .form-container form {
+  width: 100%;
+}
+
+.signin-container .login-button-group {
+  text-align: center;
+}
+
+.signin-container .login-button-group .login-button {
+  width: 184px;
+  height: 35px;
+  background: #61c759;
+  color: #ffffff;
+  border: none;
+}
+
+.signin-container .login-button-group .linkedin-button {
+  width: 184px;
+  height: 35px;
+  background: #153f91;
+  color: #ffffff;
+  border: none;
+}
+
+.signin-container a {
+  color: #fff;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.signin-container a span {
+  text-decoration: underline;
+}
+
+.signin-container a:hover {
+  text-decoration: underline;
+  color: #fff
+}
