@@ -1,0 +1,12 @@
+.matches-tab-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #714aff;
+  margin: 10px 10px 10px 0px;
+  padding: 10px;
+}
+
+.matches-tab-container .small-profile-container {
+  display: block
+}

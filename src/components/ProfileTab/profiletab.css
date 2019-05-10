@@ -1,0 +1,75 @@
+.profile-tab-container {
+  border: 2px solid #714aff;
+  margin: 10px 0px 10px 10px;
+}
+
+.profile-tab-container p {
+  margin-bottom: 5px;
+}
+
+.profile-tab-container .bio {
+  padding: 20px 40px;
+}
+
+.profile-tab-container .bio p {
+  font-style: italic;
+  color: #332f2d;
+  text-align: center;
+}
+
+.profile-tab-container {
+  padding: 30px;
+  background-color: #ffffff;
+}
+
+.profile-tab-container .profile-picture-container {
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.profile-tab-container .profile-picture-container img {
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  margin: 20px;
+}
+
+.profile-tab-container .profile-basic-profile-container {
+  display: flex;
+  flex: 2;
+  align-items: center;
+}
+
+.profile-tab-container
+  .profile-basic-profile-container
+  .profile-basic-profile
+  .profile-name {
+  margin: 0px;
+  font-size: 20px;
+}
+
+.profile-tab-container
+  .profile-basic-profile-container
+  .profile-basic-profile
+  .professional-role {
+  font-size: 13px;
+  color: #714aff;
+}
+
+.profile-tab-container
+  .profile-basic-profile-container
+  .profile-basic-profile
+  .professional-location
+  img {
+  width: 20px;
+}
+
+.profile-tab-container
+  .profile-basic-profile-container
+  .profile-basic-profile
+  .professional-links {
+  margin-top: 20px;
+  font-size: 10px;
+}
