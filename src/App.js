@@ -7,9 +7,7 @@ import store from './store';
 import { setCurrentUser, logoutUser } from './actions/authActions';
 import { clearCurrentCrafter } from './actions/crafterActions';
 
-import Nav from './components/NavComponent/Nav';
 import Root from './components/Root';
-import Footer from './components/Footer';
 import './index.css';
 
 
@@ -43,9 +41,7 @@ class App extends Component {
       <Provider store={ store }>
         <Router>
           <div>
-            <Nav />
             <Root/>
-            <Footer />
           </div>
         </Router>
       </Provider>
