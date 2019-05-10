@@ -1,25 +1,26 @@
-import React, { Component } from 'react';
-import PropTypes from 'prop-types';
-import { connect } from 'react-redux';
-import { loginUser } from '../../actions/authActions';
-import { BarLoader } from 'react-spinners';
-import TextFieldGroup from '../common/TextFieldGroup';
+import React, { Component } from "react";
+import PropTypes from "prop-types";
+import { connect } from "react-redux";
+import { loginUser } from "../../actions/authActions";
+import { BarLoader } from "react-spinners";
+import TextFieldGroup from "../common/TextFieldGroup";
+import LinkedIn from "../../components/LinkedIn";
+import { callApi } from "../../utils";
 
-import { Link, Redirect } from 'react-router-dom';
+import { Link, Redirect } from "react-router-dom";
 
-import './css/auth.css';
-import img_logo from './img/logo.png';
+import "./css/auth.css";
 
 class Signin extends Component {
   constructor(props) {
     super(props);
 
     this.state = {
-      email: '',
-      password: '',
+      email: "",
+      password: "",
       errors: {},
       loading: false
-    }
+    };
 
     this.onChange = this.onChange.bind(this);
     this.onSubmit = this.onSubmit.bind(this);
@@ -27,20 +28,7 @@ class Signin extends Component {
 
   componentDidMount() {
     if (this.props.auth.isAuthenticated) {
-      this.props.history.push('/');
-    }
-  }
-
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.auth.isAuthenticated) {
-      this.props.history.push('/');
-    }
-
-    if (nextProps.errors) {
-      this.setState({
-        errors: nextProps.errors,
-        loading: false
-      })
+      this.props.history.push("/");
     }
   }
 
@@ -56,13 +44,17 @@ class Signin extends Component {
     const userData = {
       email: this.state.email,
       password: this.state.password
-    }
+    };
 
     this.props.loginUser(userData);
   }
 
   requestProfile = () => {
-    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${process.env.REACT_APP_CLIENT_ID}&scope=r_basicprofile&state=123456&redirect_uri=${process.env.REACT_APP_REDIRECT_URI}`
+    var oauthUrl = `https://www.linkedin.com/oauth/v2/authorization?response_type=code&client_id=${
+      process.env.REACT_APP_CLIENT_ID
+    }&scope=r_basicprofile&state=123456&redirect_uri=${
+      process.env.REACT_APP_REDIRECT_URI
+    }`;
     var width = 450,
       height = 730,
       left = window.screen.width / 2 - width / 2,
@@ -82,30 +74,48 @@ class Signin extends Component {
     );
   };
 
-  render() {
+  handleSuccess = data => {
+    console.log(data);
+    callApi("/auth", data, "POST")
+      .then(data => {
+        console.log(data);
+      })
+      .catch(err => console.log(err));
+    this.setState({
+      code: data.code,
+      errorMessage: ""
+    });
+  };
 
-    const { from } = this.props.location.state || { from: { pathname: '/' } }
+  handleFailure = error => {
+    console.log(error);
+    this.setState({
+      code: "",
+      errorMessage: error.errorMessage
+    });
+  };
+
+  render() {
+    const { from } = this.props.location.state || { from: { pathname: "/" } };
     //const { info } = this.props.location.state || { info: ""}
 
     if (this.props.auth.isAuthenticated) {
-      return (<Redirect to={from} />)
+      return <Redirect to={from} />;
     }
 
     const { errors } = this.state;
 
     return (
       <section className="login-pane">
-        <div className="">
+        <div className="h-100">
           <div className="row">
             <div className="col-sm-6">
-              <div className="left-pane">
-
-              </div>
+              <div className="left-pane" />
             </div>
             <div className="col-sm-6 right-pane">
               <form noValidate onSubmit={this.onSubmit}>
                 <h3>Welcome back,</h3>
-                <br></br>
+                <br />
                 <h4>Please Sign In to Continue</h4>
                 <p>email</p>
                 <TextFieldGroup
@@ -113,7 +123,8 @@ class Signin extends Component {
                   type="email"
                   value={this.state.email}
                   onChange={this.onChange}
-                  error={errors.email} />
+                  error={errors.email}
+                />
 
                 <p>password</p>
                 <TextFieldGroup
@@ -121,27 +132,38 @@ class Signin extends Component {
                   type="password"
                   value={this.state.password}
                   onChange={this.onChange}
-                  error={errors.password} />
+                  error={errors.password}
+                />
 
-                <p className="extra-note"><Link to='/signin'>forgot password?</Link></p>
-                <br></br>
+                <p className="extra-note">
+                  <Link to="/signin">forgot password?</Link>
+                </p>
+                <br />
                 <div>
                   <BarLoader
-                    color={'#FBB062'}
+                    color={"#FBB062"}
                     loading={this.state.loading}
                     width={218}
                   />
                 </div>
                 <input type="submit" value="Sign In" />
-                <br></br>
-                <button type="button" className="btn btn-info" onClick={this.requestProfile} >Login with Linkedin</button>
-                <p>New to APP? <Link to='/signup'>Sign Up</Link></p>
+                <br />
+                <LinkedIn
+                  onSuccess={this.handleSuccess}
+                  onFailure={this.handleFailure}
+                  redirectUri={`${window.location.origin}/linkedin`}
+                  scope="r_liteprofile r_emailaddress"
+                  clientId={process.env.REACT_APP_CLIENT_ID}
+                  // redirectUri={process.env.REACT_APP_REDIRECT_URI}
+                />
+                <p>
+                  New to APP? <Link to="/signup">Sign Up</Link>
+                </p>
               </form>
             </div>
           </div>
         </div>
       </section>
-
     );
   }
 }
@@ -150,12 +172,14 @@ Signin.propTypes = {
   loginUser: PropTypes.func.isRequired,
   auth: PropTypes.object.isRequired,
   errors: PropTypes.object.isRequired
-}
+};
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = state => ({
   auth: state.auth,
   errors: state.errors
-})
+});
 
-
-export default connect(mapStateToProps, { loginUser })(Signin);
+export default connect(
+  mapStateToProps,
+  { loginUser }
+)(Signin);

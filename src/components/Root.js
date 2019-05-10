@@ -14,6 +14,7 @@ import EditCrafter from './CraftersComponent/EditCrafter';
 import CraftersProfileLink from './CraftersComponent/CraftersProfileLink';
 import Dashboard from './DashboardComponent/Dashboard';
 
+import LinkedInPopup from '../components/LinkedInPopup'
 
 
 
@@ -21,18 +22,19 @@ const Root = () => {
   return (
     <section>
       <Switch>
-        <Route exact path='/' component={Home} />
         <Route exact path="/crafter/:handle" component={CraftersProfileLink} />
         <PrivateRoute exact path="/crafters/register" component={RegisterCrafter} />
         <PrivateRoute exact path="/dashboard" component={Dashboard} />
         <PrivateRoute exact path="/edit" component={EditCrafter} />
 
         <Route exact path="/signin" component={SignIn} />
+        <Route exact path="/linkedin" component={LinkedInPopup} />
         <Route exact path="/signup" component={SignUp} />
 
         <Route exact path="/events" component={Events} />
         <Route exact path="/events/:name" render={props => <SingleEvent {...props} />} />
 
+        <Route exact path='/' component={Home} />
       </Switch>
     </section>
   );
