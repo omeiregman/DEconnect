@@ -7,7 +7,7 @@ import "./signup.css";
 const SignInComponent = ({ onSuccess, onFailure, inputs, onChange }) => (
   <div className="signup-container">
     <div className="form-container">
-      <p className="center">Join us to meet the rest of the world</p>
+      <p className="center">Join us to ...</p>
       <form noValidate>
         <p>first name</p>
         <TextFieldGroup

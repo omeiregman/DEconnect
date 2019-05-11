@@ -2,13 +2,13 @@ import React from "react";
 import LoadingSpinner from "./loader.svg";
 import "./loadingpage.css";
 
-const LoadingPage = () => (
-  <div className="loading-spinner-container">
+const LoadingPage = ({ message }) => (
+  <div className="loading-spinner-container pulse">
     {/* <img src={LoadingSpinner} /> */}
     <div>
       <i className="fa fa-spinner fa-spin" />
       <div>
-        <p>...authenticating with Linkedin</p>
+        <p> {message ? message : "...loading"}</p>
       </div>
     </div>
   </div>
