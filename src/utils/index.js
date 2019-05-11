@@ -1,7 +1,7 @@
 import axios from "axios";
 
 export const config = {
-  fetchUrl: "http://deconnectserver.herokuapp.com/api",
+  fetchUrl: "https://deconnectserver.herokuapp.com/api",
   // fetchUrl: "http://localhost:5000/api"
 };
 

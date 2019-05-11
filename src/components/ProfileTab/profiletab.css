@@ -4,8 +4,7 @@
 }
 
 .profile-tab-container a {
-  color: #714aff
-  
+  color: #714aff;
 }
 
 .profile-tab-container p {
@@ -77,4 +76,18 @@
   .professional-links {
   margin-top: 20px;
   font-size: 10px;
+}
+
+.profile-tab-container .connect {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.profile-tab-container .connect button {
+  border: 1px solid #714aff;
+}
+
+.profile-tab-container .connect p {
+  color: #61C751;
 }

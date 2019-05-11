@@ -14,7 +14,7 @@ const SignInComponent = ({
   return (
     <div className="signin-container">
       <div className="form-container">
-        <p className="center">Sign In to meet the rest of the world</p>
+        <p className="center">Sign In to ...</p>
         <form noValidate>
           <p>email</p>
           <TextFieldGroup

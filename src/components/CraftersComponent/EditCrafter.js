@@ -12,6 +12,8 @@ import SelectListGroup from "../common/SelectListGroup";
 import AddExperience from "./AddExperience";
 import { SelectOptions } from "./CrafterSelectOptions";
 
+import LoadingPage from "../LoadingPage";
+
 import "./css/regcrafter.css";
 import isEmpty from "./../../validation/is-empty";
 import OtherCraftItems from "./OtherCraftItems";
@@ -40,7 +42,6 @@ class CrafterRegistration extends Component {
     };
 
     this.onChange = this.onChange.bind(this);
-    this.onSubmit = this.onSubmit.bind(this);
     this.deleteOtherCraftItem = this.deleteOtherCraftItem.bind(this);
   }
 
@@ -50,27 +51,30 @@ class CrafterRegistration extends Component {
     });
   }
 
-  onSubmit(e) {
+  onSubmit = e => {
     e.preventDefault();
-    this.setState({ loading: true });
-
-    let crafterData = {
-      handle: this.state.handle,
-      company: this.state.company,
-      website: this.state.website,
-      location: this.state.location,
-      status: this.state.status,
-      otherCraftsSelect: this.state.otherCraftsSelect,
-      bio: this.state.bio,
-      youtube: this.state.youtube,
-      twitter: this.state.twitter,
-      instagram: this.state.instagram,
-      facebook: this.state.facebook
-    };
-    setTimeout(() => {
-      this.props.createCrafter(crafterData, this.props.history);
-    });
-  }
+    this.setState({ loading: true }, () =>
+      setTimeout(() => {
+        let crafterData = {
+          handle: this.state.handle,
+          company: this.state.company,
+          website: this.state.website,
+          location: this.state.location,
+          status: this.state.status,
+          otherCraftsSelect: this.state.otherCraftsSelect,
+          bio: this.state.bio,
+          youtube: this.state.youtube,
+          twitter: this.state.twitter,
+          instagram: this.state.instagram,
+          facebook: this.state.facebook
+        };
+        this.setState({
+          loading: false
+        });
+        this.props.createCrafter(crafterData, this.props.history);
+      }, 2000)
+    );
+  };
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.errors) {
@@ -161,13 +165,15 @@ class CrafterRegistration extends Component {
   }
 
   render() {
-    const { errors } = this.state;
+    const { errors, loading } = this.state;
     const options = SelectOptions;
 
     const entries = this.state.otherCraftsSelect;
 
-    return (
-      <section className="">
+    return loading ? (
+      <LoadingPage message="Updating profile" />
+    ) : (
+      <section className="container">
         <div className="row">
           <div className="registration-pane">
             <div className="col-sm-12">

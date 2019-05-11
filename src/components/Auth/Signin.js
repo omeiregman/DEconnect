@@ -106,9 +106,9 @@ class Signin extends Component {
     const { inputs, loading } = this.state;
 
     return loading ? (
-      <LoadingPage />
+      <LoadingPage message="...authenticating with linkedin" />
     ) : (
-      <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
+      <div className="container-fluid" style={{ margin: 0, padding: 0, background: "rgba(113, 74, 255, 0.9)" }}>
         <div className="row">
           <div className="col-md-7 bounce-in-left" style={{ padding: 0 }}>
             <LoginSidePaneComponent />

@@ -7,11 +7,11 @@ import twitterImage from "../CraftersComponent/img/twitter.png";
 import instagramImage from "../CraftersComponent/img/instagram.png";
 import "./profiletab.css";
 
-const ProfileTabComponent = ({ user }) => (
+const ProfileTabComponent = ({ user, type }) => (
   <div className="profile-tab-container">
     <div className="row">
       <div className="profile-picture-container">
-        <img src={profileImage} alt="profile display picture" />
+        <img src={user.picture ? user.picture : profileImage} alt="profile display picture" />
       </div>
       <div className="profile-basic-profile-container">
         <div className="profile-basic-profile">
@@ -19,7 +19,7 @@ const ProfileTabComponent = ({ user }) => (
             {" "}
             {`${user.firstName} ${user.lastName}`}{" "}
           </p>
-          <p className="professional-role"> Quality Assurance Tester </p>
+          <p className="professional-role"> {user.status} </p>
           <p className="professional-location">
             <img src={locationImage} alt="Lagos, NG" /> {user.location}
           </p>
@@ -36,12 +36,20 @@ const ProfileTabComponent = ({ user }) => (
           </div>
         </div>
       </div>
-      <Link to="/edit-profile"> Edit </Link>
+      {type === "self" && <Link to="/edit-profile"> Edit </Link>}
     </div>
     <div className="bio">
-      <p>
-        {user.bio}
-      </p>
+      <p>{user.bio}</p>
+    </div>
+    <div className="connect">
+      {type !== "self" && user.connected ? (
+        <React.Fragment>
+          <p>Connected</p>
+          <button>Send Message</button>
+        </React.Fragment>
+      ) : type !== "self" && !user.connected ? (
+        <button>Connect</button>
+      ) : null}
     </div>
   </div>
 );
