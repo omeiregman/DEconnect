@@ -10,18 +10,6 @@ const ProfileTabComponent = ({}) => (
       <SmallProfileComponent />
       <SmallProfileComponent />
       <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
-      <SmallProfileComponent />
     </div>
   </div>
 );

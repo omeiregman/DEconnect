@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { loginUser } from "../../actions/authActions";
-import { callApi } from "../../utils";
+import LoadingPage from "../../components/LoadingPage";
 
 import SignInComponent from "../../components/Signin";
 import LoginSidePaneComponent from "../../components/LoginSidePane";
@@ -23,12 +23,6 @@ class Signin extends Component {
       errors: {},
       loading: false
     };
-  }
-
-  componentDidMount() {
-    if (this.props.auth.isAuthenticated) {
-      this.props.history.push("/");
-    }
   }
 
   onChange = e => {
@@ -80,14 +74,16 @@ class Signin extends Component {
 
   handleSuccess = data => {
     console.log(data);
-    callApi("/auth", data, "POST")
-      .then(data => {
-        console.log(data);
-      })
-      .catch(err => console.log(err));
+    this.props.loginUser(data, this.props.history);
+    // callApi("/auth", data, "POST")
+    //   .then(data => {
+    //     console.log(data);
+    //   })
+    //   .catch(err => console.log(err));
     this.setState({
       code: data.code,
-      errorMessage: ""
+      errorMessage: "",
+      loading: true
     });
   };
 
@@ -95,26 +91,29 @@ class Signin extends Component {
     console.log(error);
     this.setState({
       code: "",
-      errorMessage: error.errorMessage
+      errorMessage: error.errorMessage,
+      loading: false
+    });
+  };
+
+  loginWithLinkedin = () => {
+    this.setState({
+      loading: true
     });
   };
 
   render() {
-    const { inputs } = this.state;
-    const { from } = this.props.location.state || { from: { pathname: "/" } };
-    //const { info } = this.props.location.state || { info: ""}
+    const { inputs, loading } = this.state;
 
-    if (this.props.auth.isAuthenticated) {
-      return <Redirect to={from} />;
-    }
-
-    return (
+    return loading ? (
+      <LoadingPage />
+    ) : (
       <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
         <div className="row">
-          <div className="col-md-7" style={{ padding: 0 }}>
+          <div className="col-md-7 bounce-in-left" style={{ padding: 0 }}>
             <LoginSidePaneComponent />
           </div>
-          <div className="col-md-5" style={{ padding: 0 }}>
+          <div className="col-md-5 bounce-in-right" style={{ padding: 0 }}>
             <SignInComponent
               onSuccess={this.handleSuccess}
               onFailure={this.handleFailure}
@@ -123,6 +122,7 @@ class Signin extends Component {
               clientId={process.env.REACT_APP_CLIENT_ID}
               inputs={inputs}
               onChange={this.onChange}
+              onClick={this.loginWithLinkedin}
             />
           </div>
         </div>

@@ -109,10 +109,10 @@ class SignUp extends Component {
     return (
       <div className="container-fluid" style={{ margin: 0, padding: 0 }}>
         <div className="row">
-          <div className="col-md-7" style={{ padding: 0 }}>
+          <div className="col-md-7 bounce-in-left" style={{ padding: 0 }}>
             <LoginSidePaneComponent />
           </div>
-          <div className="col-md-5" style={{ padding: 0 }}>
+          <div className="col-md-5 bounce-in-right" style={{ padding: 0 }}>
             <SignUpComponent
               onSuccess={this.handleSuccess}
               onFailure={this.handleFailure}

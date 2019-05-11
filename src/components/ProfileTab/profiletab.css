@@ -3,6 +3,11 @@
   margin: 10px 0px 10px 10px;
 }
 
+.profile-tab-container a {
+  color: #714aff
+  
+}
+
 .profile-tab-container p {
   margin-bottom: 5px;
 }

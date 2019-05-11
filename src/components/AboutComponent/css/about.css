@@ -9,7 +9,7 @@
 }
 
 .page-head-hero {
-  font-family: Ubuntu;
+   
   color: #ffffff;
   text-align: center;
   padding: 8%;
@@ -23,7 +23,7 @@
   margin-top: 40px;
   font-size: 1.7em;
   color: #F2994A;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: normal;
 }
@@ -33,7 +33,7 @@
 }
 
 .about-section-one p {
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: 300;
   line-height: 41px;
@@ -74,13 +74,13 @@
   font-style: normal;
   font-weight: 400;
   line-height: 45px;
-  font-family: Ubuntu;
+   
 }
 
 .about-section-four {
   padding-left: 18%;
   padding-right: 18%;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: 300;
   line-height: 41px;
@@ -104,7 +104,7 @@
 .about-section-six {
   padding-left: 18%;
   padding-right: 18%;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: 300;
   line-height: 38px;
@@ -115,7 +115,7 @@
 .about-section-six h4 {
   font-size: 1.2em;
   color: #F2994A;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: normal;
 }

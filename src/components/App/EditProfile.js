@@ -2,8 +2,8 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import Header from "../CraftersComponent/DEconnectHeader";
 import ProfileTab from "../ProfileTab";
-import InterestTab from '../InterestsTab'
 import ProfessionalMatches from "../ProfessionalMatches";
+import EditCrafter from "../CraftersComponent/EditCrafter";
 
 class Profile extends Component {
   render() {
@@ -12,15 +12,7 @@ class Profile extends Component {
       <div>
         <Header />
         <div className="container">
-          <div className="row">
-            <div className="col-md-8">
-              <ProfileTab user={auth.user} />
-              <InterestTab user={auth.user} />
-            </div>
-            <div className="col-md-4">
-              <ProfessionalMatches />
-            </div>
-          </div>
+          <EditCrafter />
         </div>
       </div>
     );

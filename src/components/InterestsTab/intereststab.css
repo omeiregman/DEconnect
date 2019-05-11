@@ -1,0 +1,32 @@
+.interest-tab-container {
+  border: 2px solid #714aff;
+  margin: 10px 0px 10px 10px;
+}
+
+.interest-tab-container .hero-text-container {
+  display: block;
+  color: #714aff;
+  font-size: 18px;
+  margin-bottom: -20px;
+  padding-left: 10px;
+}
+
+.interest-tab-container .all-interest-container {
+  display: block;
+  padding: 10px;
+}
+
+.interest-tab-container .all-interest-container .interest-container {
+  padding: 10px;
+  display: inline-block;
+}
+
+.interest-tab-container
+  .all-interest-container
+  .interest-container
+  .interest-logo {
+  background-color: #714aff;
+  padding: 8px;
+  color: #ffffff;
+  margin-right: 8px;
+}
