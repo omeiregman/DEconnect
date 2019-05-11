@@ -1,0 +1,23 @@
+.loading-spinner-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(113, 74, 255, 0.9), rgba(113, 74, 255, 0.9)), url("../../images/sign.jpg");
+}
+
+.loading-spinner-container i {
+  color: #f3f3f3f3;
+  font-size: 100px;
+  padding: 50px;
+}
+
+.loading-spinner-container div {
+  display: block;
+  text-align: center;
+  color: #f3f3f3f3
+}
+
+.loading-spinner-container div p {
+  font-size: 20px
+}

@@ -45,11 +45,9 @@ export class LinkedIn extends Component {
   };
 
   handleConnectLinkedInClick = e => {
-    console.log("handleConnectLinkedInClick");
     if (e) {
       e.preventDefault();
     }
-    this.props.onClick && this.props.onClick();
     this.popup = window.open(this.getUrl(), "_blank", "width=600,height=600");
     window.addEventListener("message", this.receiveMessage, false);
   };

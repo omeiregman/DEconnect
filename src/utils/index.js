@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const config = {
+export const config = {
   fetchUrl: "http://deconnectserver.herokuapp.com/api",
   // fetchUrl: "http://localhost:5000/api"
 };

@@ -12,7 +12,7 @@
 }
 
 .page-head-hero {
-  font-family: Ubuntu;
+   
   color: #ffffff;
   text-align: center;
   padding: 8%;
@@ -26,7 +26,7 @@
   margin-top: 30px;
   font-size: 1.7em;
   color: #F2994A;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: normal;
 }
@@ -44,7 +44,7 @@
 
 .event-card h4 {
   padding-top: 5px;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -55,7 +55,7 @@
 }
 
 .event-card h3 {
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -67,7 +67,7 @@
 
 
 .event-card h5 {
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: 300;
   line-height: normal;
@@ -80,7 +80,7 @@
   cursor: pointer;
   background-color: #EA5800;
   padding: 10px;
-  font-family: Ubuntu;
+   
   font-style: normal;
   font-weight: normal;
   line-height: normal;
@@ -89,7 +89,7 @@
 }
 
 .event-card p:hover {
-  background-color: #E5A062;
+  background-color: rgba(113, 74, 255, 0.9);
 }
 
 .more-icon {

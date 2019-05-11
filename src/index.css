@@ -1,4 +1,4 @@
 body {
   font-family: "Questrial", sans-serif, "Gill Sans", "Gill Sans MT", Calibri,
-    "Trebuchet MS", sans-serif;
+    "Trebuchet MS", sans-serif !important;
 }

@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { GET_CURRENT_CRAFTER, GET_CRAFTER_FROM_HANDLE, GET_ALL_CRAFTERS, CRAFTER_LOADING, GET_ERRORS, CLEAR_CURRENT_CRAFTER, SET_CURRENT_USER } from './types';
+import { GET_CURRENT_CRAFTER, GET_CRAFTER_FROM_HANDLE, GET_ALL_CRAFTERS, CRAFTER_LOADING, GET_ERRORS, CLEAR_CURRENT_CRAFTER, SET_CURRENT_USER, UPDATE_PROFILE } from './types';
 
 const BASE_URL = "https://thecraftersconnectapi.herokuapp.com/api/";
 
@@ -24,14 +24,13 @@ export const getCurrentCrafter = () => dispatch => {
 //Create Crafter
 export const createCrafter = (crafterData, history) => dispatch => {
   console.log("Register Crafter Action")
-  axios.post(`${BASE_URL}crafters`, crafterData)
-  .then(res => history.push("/crafters/dashboard"))
-  .catch(err => 
-  dispatch({
-    type: GET_ERRORS,
-    payload: err.response.data
-    })
-  );
+  dispatch(
+    dispatch ({
+      type: UPDATE_PROFILE,
+      payload: crafterData
+    }) 
+  )
+  history.push("/profile")
 };
 
 //GET ALL CRAFTERS

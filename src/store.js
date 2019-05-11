@@ -1,18 +1,18 @@
-import { createStore, applyMiddleware, compose } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension/developmentOnly';
-import thunk from 'redux-thunk';
-import rootReducer from './reducers';
+import { createStore, applyMiddleware } from "redux";
+import { persistStore, persistReducer } from "redux-persist";
+import storage from "redux-persist/lib/storage";
+import thunk from "redux-thunk";
+import { composeWithDevTools } from "redux-devtools-extension";
+import autoMergeLevel2 from "redux-persist/lib/stateReconciler/autoMergeLevel2";
+import reducers from "./reducers";
 
-const middleWare = [thunk]
+const persistConfig = {
+  key: "root",
+  storage: storage,
+  stateReconciler: autoMergeLevel2 // see "Merge Process" section for details.
+};
 
-const initialState = {};
-
-const store = createStore(
-  rootReducer,
-  initialState,
-  composeWithDevTools(
-            applyMiddleware(...middleWare)
-      )
-  );
-
-export default store;
+const pReducer = persistReducer(persistConfig, reducers);
+const enhancer = composeWithDevTools(applyMiddleware(thunk));
+export const store = createStore(pReducer, enhancer);
+export const persistor = persistStore(store);

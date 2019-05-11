@@ -8,7 +8,8 @@ const SignInComponent = ({
   onSuccess,
   onFailure,
   inputs,
-  onChange
+  onChange,
+  onClick
 }) => {
   return (
     <div className="signin-container">
@@ -44,7 +45,7 @@ const SignInComponent = ({
             redirectUri={`${window.location.origin}/linkedin`}
             scope="r_liteprofile r_emailaddress"
             clientId={process.env.REACT_APP_CLIENT_ID}
-            // redirectUri={process.env.REACT_APP_REDIRECT_URI}
+            onClick={onClick}
           />
           <br />
           <br />
